@@ -1,0 +1,366 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R /F3 7 0 R >> >> /Contents 8 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R /F3 7 0 R >> >> /Contents 9 0 R >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Length 11088 >>
+stream
+0.1 0.21 0.36 rg
+BT /F2 11.8 Tf 46 745 Td (UNIDAD DE CONTROL Y RUTA DE DATOS: PROCESADOR GCD \(ALGORITMO DE EUCLIDES\)) Tj ET
+0.1 0.1 0.1 rg
+BT /F2 11 Tf 225 727 Td (Dise\361o de Sistemas Digitales) Tj ET
+BT /F2 11 Tf 198 712 Td (AGUILAR ANDRADE ANGEL DE JESUS) Tj ET
+0.1 0.21 0.36 RG 1.5 w 45 703 m 567 703 l S
+0.1 0.21 0.36 rg
+BT /F2 11.5 Tf 45 685 Td (1. INTRODUCCI\323N Y ARQUITECTURA DEL SISTEMA) Tj ET
+0.75 0.8 0.86 RG 0.8 w 45 681 m 567 681 l S
+0 0 0 rg
+BT /F1 9.5 Tf 45 667 Td (En este trabajo se implementa y simula en SystemVerilog un procesador digital de prop\363sito espec\355fico que calcula) Tj ET
+BT /F1 9.5 Tf 45 654.5 Td (el M\341ximo Com\372n Divisor \(GCD\) de dos n\372meros enteros sin signo de 8 bits \(xin[7:0] y yin[7:0]\) mediante el algoritmo) Tj ET
+BT /F1 9.5 Tf 45 642 Td (de Euclides por sustracciones sucesivas. El sistema se integra dentro del m\363dulo superior datapath:) Tj ET
+BT /F1 9.5 Tf 45 629.5 Td (  * Unidad de Control \(control_unit\): M\341quina de estados finitos \(FSM\) de 7 estados \(start, _input, test1, test2,) Tj ET
+BT /F1 9.5 Tf 45 617 Td (    y_x, x_y, done\) que genera las se\361ales xsel, ysel, xld, yld y gld a partir de go y las banderas eqflg y ltflg.) Tj ET
+BT /F1 9.5 Tf 45 604.5 Td (  * Ruta de Datos \(Datapath\): Compuesta por 2 multiplexores \(xmux, ymux\), 3 registros de 8 bits \(xreg, yreg, greg\),) Tj ET
+BT /F1 9.5 Tf 45 592 Td (    2 restadores de 8 bits \(xsubstractor para x - y, ysubstractor para y - x\) y 1 comparador \(compare\).) Tj ET
+0.1 0.21 0.36 rg
+BT /F2 11.5 Tf 45 568 Td (2. DIAGRAMA RTL DEL PROCESADOR GCD) Tj ET
+0.75 0.8 0.86 RG 0.8 w 45 564 m 567 564 l S
+0.98 0.98 0.99 rg 0.75 0.8 0.86 RG 0.8 w 45 258 522 298 re B
+[4 3] 0 d 0.72 0.11 0.11 RG 1.2 w 65 276 482 262 re S [] 0 d
+0.72 0.11 0.11 rg BT /F2 8 Tf 70 541 Td (RTL Module: datapath) Tj ET
+0 0 0 rg
+BT /F2 8 Tf 48 470 Td (go) Tj ET
+BT /F2 8 Tf 48 308 Td (clr) Tj ET
+BT /F2 8 Tf 48 293 Td (clk) Tj ET
+BT /F2 8 Tf 315 542 Td (xin[7:0]) Tj ET
+BT /F2 8 Tf 452 542 Td (yin[7:0]) Tj ET
+BT /F2 8 Tf 408 265 Td (gcd_out[7:0]) Tj ET
+0.93 0.91 0.99 rg 0.3 0.11 0.58 RG 1.4 w 85 325 88 190 re B
+0.18 0.06 0.4 rg BT /F2 8.5 Tf 98 425 Td (u_control_unit) Tj ET
+BT /F1 7.5 Tf 104 414 Td (\(control_unit\)) Tj ET
+0 0 0 rg
+BT /F1 7 Tf 88 470 Td (go) Tj ET
+BT /F1 7 Tf 88 345 Td (clr) Tj ET
+BT /F1 7 Tf 88 333 Td (clk) Tj ET
+BT /F1 7 Tf 152 498 Td (xsel) Tj ET
+BT /F1 7 Tf 152 483 Td (ysel) Tj ET
+BT /F1 7 Tf 155 450 Td (xld) Tj ET
+BT /F1 7 Tf 155 435 Td (yld) Tj ET
+BT /F1 7 Tf 155 380 Td (gld) Tj ET
+BT /F1 7 Tf 150 358 Td (eqflg) Tj ET
+BT /F1 7 Tf 153 343 Td (ltflg) Tj ET
+0.88 0.95 0.99 rg 0.01 0.41 0.63 RG 1.2 w 265 510 m 345 510 l 330 482 l 280 482 l h B
+0 0 0 rg BT /F2 8 Tf 294 491 Td (xmux) Tj ET
+BT /F1 6.5 Tf 278 502 Td (0) Tj ET
+BT /F1 6.5 Tf 325 502 Td (1) Tj ET
+0.88 0.95 0.99 rg 0.01 0.41 0.63 RG 1.2 w 435 510 m 515 510 l 500 482 l 450 482 l h B
+0 0 0 rg BT /F2 8 Tf 464 491 Td (ymux) Tj ET
+BT /F1 6.5 Tf 452 502 Td (1) Tj ET
+BT /F1 6.5 Tf 495 502 Td (0) Tj ET
+0.86 0.99 0.9 rg 0.08 0.5 0.24 RG 1.2 w 272 428 66 36 re B
+0 0 0 rg BT /F2 8 Tf 295 445 Td (xreg) Tj ET
+BT /F1 6.5 Tf 275 454 Td (clr) Tj ET
+BT /F1 6.5 Tf 275 433 Td (clk) Tj ET
+BT /F1 6.5 Tf 323 444 Td (xld) Tj ET
+0.86 0.99 0.9 rg 0.08 0.5 0.24 RG 1.2 w 442 428 66 36 re B
+0 0 0 rg BT /F2 8 Tf 465 445 Td (yreg) Tj ET
+BT /F1 6.5 Tf 445 454 Td (clr) Tj ET
+BT /F1 6.5 Tf 445 433 Td (clk) Tj ET
+BT /F1 6.5 Tf 493 444 Td (yld) Tj ET
+1.0 0.95 0.78 rg 0.7 0.32 0.04 RG 1.2 w 215 345 68 32 re B
+0 0 0 rg BT /F2 7.5 Tf 223 360 Td (xsubstractor) Tj ET
+BT /F1 6.5 Tf 232 350 Td (x - y) Tj ET
+0.99 0.91 0.95 rg 0.74 0.09 0.36 RG 1.2 w 295 345 64 32 re B
+0 0 0 rg BT /F2 7.5 Tf 310 360 Td (compare) Tj ET
+BT /F1 6.5 Tf 303 350 Td (eqflg | ltflg) Tj ET
+0.86 0.99 0.9 rg 0.08 0.5 0.24 RG 1.2 w 371 340 64 37 re B
+0 0 0 rg BT /F2 8 Tf 393 357 Td (greg) Tj ET
+BT /F1 6.5 Tf 374 367 Td (clr) Tj ET
+BT /F1 6.5 Tf 374 345 Td (clk) Tj ET
+BT /F1 6.5 Tf 420 355 Td (gld) Tj ET
+1.0 0.95 0.78 rg 0.7 0.32 0.04 RG 1.2 w 448 345 68 32 re B
+0 0 0 rg BT /F2 7.5 Tf 456 360 Td (ysubstractor) Tj ET
+BT /F1 6.5 Tf 467 350 Td (y - x) Tj ET
+0.06 0.09 0.16 RG 1.6 w
+327 538 m 327 510 l S
+456 538 m 456 510 l S
+305 482 m 305 464 l S
+475 482 m 475 464 l S
+0 0 0 rg BT /F2 7 Tf 309 471 Td (x1[7:0]) Tj ET
+BT /F2 7 Tf 479 471 Td (y1[7:0]) Tj ET
+0.09 0.64 0.29 RG 1.6 w
+305 428 m 305 405 l S
+235 405 m 468 405 l S
+235 405 m 235 377 l S
+312 405 m 312 377 l S
+403 405 m 403 377 l S
+468 405 m 468 377 l S
+0.08 0.5 0.24 rg BT /F2 7 Tf 309 414 Td (x[7:0]) Tj ET
+0.06 0.46 0.43 RG 1.6 w
+475 428 m 475 395 l S
+265 395 m 498 395 l S
+265 395 m 265 377 l S
+342 395 m 342 377 l S
+498 395 m 498 377 l S
+0.06 0.46 0.43 rg BT /F2 7 Tf 479 414 Td (y[7:0]) Tj ET
+0.7 0.32 0.04 RG 1.3 w
+249 345 m 249 330 l 202 330 l 202 522 l 282 522 l 282 510 l S
+482 345 m 482 330 l 532 330 l 532 522 l 498 522 l 498 510 l S
+0.7 0.32 0.04 rg BT /F2 7 Tf 212 334 Td (xr[7:0]) Tj ET
+BT /F2 7 Tf 492 334 Td (yr[7:0]) Tj ET
+0.06 0.09 0.16 RG 1.8 w 403 340 m 403 264 l S
+0.86 0.15 0.15 RG 0.9 w
+60 472 m 85 472 l S
+173 500 m 272 500 l S
+173 485 m 190 485 l 190 528 l 428 528 l 428 495 l 442 495 l S
+173 382 m 195 382 l 195 318 l 440 318 l 440 357 l 435 357 l S
+0.74 0.09 0.36 RG 1.0 w
+315 345 m 315 324 l 182 324 l 182 360 l 173 360 l S
+340 345 m 340 312 l 188 312 l 188 345 l 173 345 l S
+0.15 0.39 0.92 RG 0.9 w
+60 310 m 105 310 l 105 325 l S
+60 295 m 125 295 l 125 325 l S
+0.2 0.25 0.33 rg BT /F3 8.5 Tf 85 245 Td (Figura 1. Diagrama RTL del sistema integrado \(Unidad de Control + Ruta de Datos\) para el modulo datapath.) Tj ET
+0.1 0.21 0.36 rg
+BT /F2 11.5 Tf 45 224 Td (3. RESULTADOS DE LA SIMULACION) Tj ET
+0.75 0.8 0.86 RG 0.8 w 45 220 m 567 220 l S
+0.06 0.09 0.16 rg 45 48 522 165 re f
+0.12 0.16 0.23 rg 45 197 522 16 re f
+0.8 0.85 0.9 rg BT /F2 7 Tf 50 202 Td (Signal Name) Tj ET
+BT /F1 7 Tf 135 202 Td (0 ns) Tj ET
+BT /F1 7 Tf 175 202 Td (30 ns) Tj ET
+BT /F1 7 Tf 245 202 Td (90 ns) Tj ET
+BT /F1 7 Tf 315 202 Td (150 ns) Tj ET
+1 0.88 0.28 rg BT /F2 7 Tf 385 202 Td (220 ns) Tj ET
+0.8 0.85 0.9 rg BT /F1 7 Tf 435 202 Td (310 ns) Tj ET
+1 0.88 0.28 rg BT /F2 7 Tf 520 202 Td (430 ns) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 186 Td (test_clk) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 171.5 Td (test_clr) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 157 Td (test_go) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 142.5 Td (test_xin[7:0]) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 128 Td (test_yin[7:0]) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 113.5 Td (uut/x[7:0]) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 99 Td (uut/y[7:0]) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 84.5 Td (uut/eqflg) Tj ET
+0.88 0.91 0.94 rg BT /F1 7 Tf 50 70 Td (uut/gld) Tj ET
+1 0.88 0.28 rg BT /F2 7 Tf 50 55.5 Td (test_gcd_out[7:0]) Tj ET
+0.13 0.77 0.37 RG 0.9 w
+135 184 m 140 184 l 140 192 l 145 192 l 145 184 l 150 184 l 150 192 l 155 192 l 155 184 l 160 184 l 160 192 l 165 192 l 165 184 l 170 184 l 170 192 l 175 192 l 175 184 l 180 184 l 180 192 l 185 192 l 185 184 l 190 184 l 190 192 l 195 192 l 195 184 l 200 184 l 200 192 l 205 192 l 205 184 l 210 184 l 210 192 l 215 192 l 215 184 l 220 184 l 220 192 l 225 192 l 225 184 l 230 184 l 230 192 l 235 192 l 235 184 l 240 184 l 240 192 l 245 192 l 245 184 l 250 184 l 250 192 l 255 192 l 255 184 l 260 184 l 260 192 l 265 192 l 265 184 l 270 184 l 270 192 l 275 192 l 275 184 l 280 184 l 280 192 l 285 192 l 285 184 l 290 184 l 290 192 l 295 192 l 295 184 l 300 184 l 300 192 l 305 192 l 305 184 l 310 184 l 310 192 l 315 192 l 315 184 l 320 184 l 320 192 l 325 192 l 325 184 l 330 184 l 330 192 l 335 192 l 335 184 l 340 184 l 340 192 l 345 192 l 345 184 l 350 184 l 350 192 l 355 192 l 355 184 l 360 184 l 360 192 l 365 192 l 365 184 l 370 184 l 370 192 l 375 192 l 375 184 l 380 184 l 380 192 l 385 192 l 385 184 l 390 184 l 390 192 l 395 192 l 395 184 l 400 184 l 400 192 l 405 192 l 405 184 l 410 184 l 410 192 l 415 192 l 415 184 l 420 184 l 420 192 l 425 192 l 425 184 l 430 184 l 430 192 l 435 192 l 435 184 l 440 184 l 440 192 l 445 192 l 445 184 l 450 184 l 450 192 l 455 192 l 455 184 l 460 184 l 460 192 l 465 192 l 465 184 l 470 184 l 470 192 l 475 192 l 475 184 l 480 184 l 480 192 l 485 192 l 485 184 l 490 184 l 490 192 l 495 192 l 495 184 l 500 184 l 500 192 l 505 192 l 505 184 l 510 184 l 510 192 l 515 192 l 515 184 l 520 184 l 520 192 l 525 192 l 525 184 l 530 184 l 530 192 l 535 192 l 535 184 l 540 184 l 540 192 l 545 192 l 545 184 l 550 184 l 550 192 l 555 192 l 555 184 l  S
+0.13 0.77 0.37 RG 1.1 w 135 177 m 148 177 l 148 169 l 435 169 l 435 177 l 448 177 l 448 169 l 560 169 l S
+135 155 m 148 155 l 148 163 l 435 163 l 435 155 l 448 155 l 448 163 l 560 163 l S
+0.12 0.23 0.54 rg 0.22 0.74 0.97 RG 0.8 w 135 139 300 10 re B 435 139 125 10 re B
+1 1 1 rg BT /F1 6.5 Tf 265 141.5 Td (15 \(0x0F\)) Tj ET BT /F1 6.5 Tf 482 141.5 Td (24 \(0x18\)) Tj ET
+0.12 0.23 0.54 rg 0.22 0.74 0.97 RG 0.8 w 135 124.5 300 10 re B 435 124.5 125 10 re B
+1 1 1 rg BT /F1 6.5 Tf 265 127 Td (70 \(0x46\)) Tj ET BT /F1 6.5 Tf 482 127 Td (18 \(0x12\)) Tj ET
+0.08 0.33 0.18 rg 0.29 0.87 0.5 RG 0.8 w
+135 110 35 10 re B 170 110 165 10 re B 335 110 100 10 re B 435 110 25 10 re B 460 110 35 10 re B 495 110 65 10 re B
+1 1 1 rg BT /F1 6.5 Tf 150 112.5 Td (0) Tj ET BT /F1 6.5 Tf 248 112.5 Td (15) Tj ET
+1 0.88 0.28 rg BT /F2 6.5 Tf 382 112.5 Td (5) Tj ET
+1 1 1 rg BT /F1 6.5 Tf 445 112.5 Td (0) Tj ET BT /F1 6.5 Tf 473 112.5 Td (24) Tj ET
+1 0.88 0.28 rg BT /F2 6.5 Tf 525 112.5 Td (6) Tj ET
+0.08 0.33 0.18 rg 0.29 0.87 0.5 RG 0.8 w
+135 95.5 35 10 re B 170 95.5 33 10 re B 203 95.5 33 10 re B 236 95.5 33 10 re B 269 95.5 33 10 re B 302 95.5 66 10 re B 368 95.5 67 10 re B
+435 95.5 25 10 re B 460 95.5 35 10 re B 495 95.5 25 10 re B 520 95.5 40 10 re B
+1 1 1 rg BT /F1 6.5 Tf 150 98 Td (0) Tj ET BT /F1 6.5 Tf 182 98 Td (70) Tj ET BT /F1 6.5 Tf 215 98 Td (55) Tj ET BT /F1 6.5 Tf 248 98 Td (40) Tj ET BT /F1 6.5 Tf 281 98 Td (25) Tj ET BT /F1 6.5 Tf 331 98 Td (10) Tj ET
+1 0.88 0.28 rg BT /F2 6.5 Tf 399 98 Td (5) Tj ET
+1 1 1 rg BT /F1 6.5 Tf 445 98 Td (0) Tj ET BT /F1 6.5 Tf 473 98 Td (18) Tj ET BT /F1 6.5 Tf 503 98 Td (12) Tj ET
+1 0.88 0.28 rg BT /F2 6.5 Tf 538 98 Td (6) Tj ET
+0.96 0.45 0.71 RG 1.1 w 135 89 m 170 89 l 170 81 l 368 81 l 368 89 l 460 89 l 460 81 l 520 81 l 520 89 l 560 89 l S
+0.98 0.75 0.14 RG 1.1 w 135 67 m 380 67 l 380 75 l 435 75 l 435 67 l 525 67 l 525 75 l 560 75 l S
+0.2 0.25 0.33 rg 0.58 0.64 0.72 RG 0.8 w 135 51 255 11 re B 435 51 95 11 re B
+0.52 0.3 0.05 rg 1 0.88 0.28 RG 1.3 w 390 51 45 11 re B 530 51 30 11 re B
+0.85 0.88 0.92 rg BT /F1 6.5 Tf 252 54 Td (0 \(0x00\)) Tj ET BT /F1 6.5 Tf 472 54 Td (0 \(0x00\)) Tj ET
+1 0.88 0.28 rg BT /F2 7 Tf 400 54 Td (5 \(0x05\)) Tj ET BT /F2 7 Tf 534 54 Td (6 \(0x06\)) Tj ET
+[2 2] 0 d 1 0.88 0.28 RG 0.9 w 390 48 m 390 197 l S 530 48 m 530 197 l S [] 0 d
+0.2 0.25 0.33 rg BT /F3 8.5 Tf 55 36 Td (Figura 2. Resultados de la simulacion funcional en Vivado XSim para GCD\(15, 70\) = 5 y GCD\(24, 18\) = 6.) Tj ET
+
+endstream
+endobj
+9 0 obj
+<< /Length 8434 >>
+stream
+0.1 0.21 0.36 rg
+BT /F2 11 Tf 45 745 Td (TABLA DE SEGUIMIENTO CICLO A CICLO: CASO DE ESTUDIO GCD\(15, 70\) = 5) Tj ET
+0.88 0.91 0.95 rg 45 717 522 18 re f
+0.4 0.45 0.52 RG 0.7 w
+45 735 m 567 735 l S
+45 717 m 567 717 l S
+45 699 m 567 699 l S
+45 681 m 567 681 l S
+45 663 m 567 663 l S
+45 645 m 567 645 l S
+45 627 m 567 627 l S
+45 609 m 567 609 l S
+45 591 m 567 591 l S
+45 573 m 567 573 l S
+45 555 m 567 555 l S
+45 537 m 567 537 l S
+45 735 m 45 537 l S
+98 735 m 98 537 l S
+175 735 m 175 537 l S
+265 735 m 265 537 l S
+310 735 m 310 537 l S
+355 735 m 355 537 l S
+412 735 m 412 537 l S
+525 735 m 525 537 l S
+567 735 m 567 537 l S
+0.06 0.09 0.16 rg
+BT /F2 7.5 Tf 49 723 Td (Tiempo \(ns\)) Tj ET
+BT /F2 7.5 Tf 102 723 Td (Estado FSM) Tj ET
+BT /F2 7.5 Tf 179 723 Td (Senales Control) Tj ET
+BT /F2 7.5 Tf 269 723 Td (xreg \(x\)) Tj ET
+BT /F2 7.5 Tf 314 723 Td (yreg \(y\)) Tj ET
+BT /F2 7.5 Tf 359 723 Td (eqflg / ltflg) Tj ET
+BT /F2 7.5 Tf 416 723 Td (Operacion en Datapath) Tj ET
+BT /F2 7.5 Tf 529 723 Td (gcd_out) Tj ET
+0 0 0 rg
+BT /F1 7.5 Tf 49 705 Td (0 - 10) Tj ET
+BT /F1 7.5 Tf 102 705 Td (start) Tj ET
+BT /F1 7.5 Tf 179 705 Td (clr = 1) Tj ET
+BT /F1 7.5 Tf 269 705 Td (0) Tj ET
+BT /F1 7.5 Tf 314 705 Td (0) Tj ET
+BT /F1 7.5 Tf 359 705 Td (1 / 0) Tj ET
+BT /F1 7.5 Tf 416 705 Td (Reset asincrono de registros) Tj ET
+BT /F1 7.5 Tf 529 705 Td (0) Tj ET
+BT /F1 7.5 Tf 49 687 Td (15) Tj ET
+BT /F1 7.5 Tf 102 687 Td (_input) Tj ET
+BT /F1 7.5 Tf 179 687 Td (xsel=1,ysel=1,xld=1,yld=1) Tj ET
+BT /F1 7.5 Tf 269 687 Td (0) Tj ET
+BT /F1 7.5 Tf 314 687 Td (0) Tj ET
+BT /F1 7.5 Tf 359 687 Td (1 / 0) Tj ET
+BT /F1 7.5 Tf 416 687 Td (Carga xin=15, yin=70) Tj ET
+BT /F1 7.5 Tf 529 687 Td (0) Tj ET
+BT /F1 7.5 Tf 49 669 Td (25 - 45) Tj ET
+BT /F1 7.5 Tf 102 669 Td (test1->test2->y_x) Tj ET
+BT /F1 7.5 Tf 179 669 Td (yld = 1, ysel = 0) Tj ET
+BT /F1 7.5 Tf 269 669 Td (15) Tj ET
+BT /F1 7.5 Tf 314 669 Td (70) Tj ET
+BT /F1 7.5 Tf 359 669 Td (0 / 1) Tj ET
+BT /F1 7.5 Tf 416 669 Td (x < y : y <= 70 - 15 = 55) Tj ET
+BT /F1 7.5 Tf 529 669 Td (0) Tj ET
+BT /F1 7.5 Tf 49 651 Td (55 - 75) Tj ET
+BT /F1 7.5 Tf 102 651 Td (test1->test2->y_x) Tj ET
+BT /F1 7.5 Tf 179 651 Td (yld = 1, ysel = 0) Tj ET
+BT /F1 7.5 Tf 269 651 Td (15) Tj ET
+BT /F1 7.5 Tf 314 651 Td (55) Tj ET
+BT /F1 7.5 Tf 359 651 Td (0 / 1) Tj ET
+BT /F1 7.5 Tf 416 651 Td (x < y : y <= 55 - 15 = 40) Tj ET
+BT /F1 7.5 Tf 529 651 Td (0) Tj ET
+BT /F1 7.5 Tf 49 633 Td (85 - 105) Tj ET
+BT /F1 7.5 Tf 102 633 Td (test1->test2->y_x) Tj ET
+BT /F1 7.5 Tf 179 633 Td (yld = 1, ysel = 0) Tj ET
+BT /F1 7.5 Tf 269 633 Td (15) Tj ET
+BT /F1 7.5 Tf 314 633 Td (40) Tj ET
+BT /F1 7.5 Tf 359 633 Td (0 / 1) Tj ET
+BT /F1 7.5 Tf 416 633 Td (x < y : y <= 40 - 15 = 25) Tj ET
+BT /F1 7.5 Tf 529 633 Td (0) Tj ET
+BT /F1 7.5 Tf 49 615 Td (115 - 135) Tj ET
+BT /F1 7.5 Tf 102 615 Td (test1->test2->y_x) Tj ET
+BT /F1 7.5 Tf 179 615 Td (yld = 1, ysel = 0) Tj ET
+BT /F1 7.5 Tf 269 615 Td (15) Tj ET
+BT /F1 7.5 Tf 314 615 Td (25) Tj ET
+BT /F1 7.5 Tf 359 615 Td (0 / 1) Tj ET
+BT /F1 7.5 Tf 416 615 Td (x < y : y <= 25 - 15 = 10) Tj ET
+BT /F1 7.5 Tf 529 615 Td (0) Tj ET
+BT /F1 7.5 Tf 49 597 Td (145 - 165) Tj ET
+BT /F1 7.5 Tf 102 597 Td (test1->test2->x_y) Tj ET
+BT /F1 7.5 Tf 179 597 Td (xld = 1, xsel = 0) Tj ET
+BT /F1 7.5 Tf 269 597 Td (15) Tj ET
+BT /F1 7.5 Tf 314 597 Td (10) Tj ET
+BT /F1 7.5 Tf 359 597 Td (0 / 0) Tj ET
+BT /F1 7.5 Tf 416 597 Td (x > y : x <= 15 - 10 = 5) Tj ET
+BT /F1 7.5 Tf 529 597 Td (0) Tj ET
+BT /F1 7.5 Tf 49 579 Td (175 - 195) Tj ET
+BT /F1 7.5 Tf 102 579 Td (test1->test2->y_x) Tj ET
+BT /F1 7.5 Tf 179 579 Td (yld = 1, ysel = 0) Tj ET
+BT /F1 7.5 Tf 269 579 Td (5) Tj ET
+BT /F1 7.5 Tf 314 579 Td (10) Tj ET
+BT /F1 7.5 Tf 359 579 Td (0 / 1) Tj ET
+BT /F1 7.5 Tf 416 579 Td (x < y : y <= 10 - 5 = 5) Tj ET
+BT /F1 7.5 Tf 529 579 Td (0) Tj ET
+BT /F1 7.5 Tf 49 561 Td (205) Tj ET
+BT /F1 7.5 Tf 102 561 Td (test1) Tj ET
+BT /F1 7.5 Tf 179 561 Td (Ninguna) Tj ET
+BT /F1 7.5 Tf 269 561 Td (5) Tj ET
+BT /F1 7.5 Tf 314 561 Td (5) Tj ET
+BT /F1 7.5 Tf 359 561 Td (1 / 0) Tj ET
+BT /F1 7.5 Tf 416 561 Td (Detecta x == y \(eqflg = 1\)) Tj ET
+BT /F1 7.5 Tf 529 561 Td (0) Tj ET
+BT /F2 7.5 Tf 49 543 Td (215 - 300) Tj ET
+BT /F2 7.5 Tf 102 543 Td (done) Tj ET
+BT /F2 7.5 Tf 179 543 Td (gld = 1) Tj ET
+BT /F2 7.5 Tf 269 543 Td (5) Tj ET
+BT /F2 7.5 Tf 314 543 Td (5) Tj ET
+BT /F2 7.5 Tf 359 543 Td (1 / 0) Tj ET
+BT /F2 7.5 Tf 416 543 Td (greg <= x \(Resultado final\)) Tj ET
+BT /F2 7.5 Tf 529 543 Td (5) Tj ET
+0.1 0.21 0.36 rg
+BT /F2 11.5 Tf 45 508 Td (4. ANALISIS DE LOS RESULTADOS DE LA SIMULACION) Tj ET
+0.75 0.8 0.86 RG 0.8 w 45 504 m 567 504 l S
+0 0 0 rg
+BT /F2 9.3 Tf 45 488 Td (1. Coordinacion entre Unidad de Control y Ruta de Datos:) Tj ET
+BT /F1 9.3 Tf 45 475 Td (   En los resultados de simulacion se observa claramente la division funcional del procesador digital. Mientras que) Tj ET
+BT /F1 9.3 Tf 45 462 Td (   los bloques combinacionales \(xsubstractor, ysubstractor y compare\) calculan de forma continua x - y, y - x y las) Tj ET
+BT /F1 9.3 Tf 45 449 Td (   relaciones de magnitud \(eqflg, ltflg\), los registros internos xreg, yreg y greg solo actualizan su estado en el) Tj ET
+BT /F1 9.3 Tf 45 436 Td (   flanco positivo de reloj cuando la Unidad de Control activa las senales de carga xld, yld o gld respectivamente.) Tj ET
+BT /F2 9.3 Tf 45 410 Td (2. Verificacion del Algoritmo de Euclides para GCD\(15, 70\) = 5:) Tj ET
+BT /F1 9.3 Tf 45 397 Td (   * Fase de Carga \(_input, t = 15 ns\): Al activarse go = 1, la FSM transita de start a _input y pone en alto) Tj ET
+BT /F1 9.3 Tf 45 384 Td (     xsel = 1, ysel = 1, xld = 1 y yld = 1. Esto encamina xin = 15 y yin = 70 a traves de xmux y ymux hacia los) Tj ET
+BT /F1 9.3 Tf 45 371 Td (     registros xreg y yreg.) Tj ET
+BT /F1 9.3 Tf 45 358 Td (   * Sustracciones sucesivas para calcular 70 mod 15 \(t = 25 ns a 135 ns\): Como x = 15 < y = 70, el comparador) Tj ET
+BT /F1 9.3 Tf 45 345 Td (     activa ltflg = 1 y eqflg = 0. La unidad de control recorre cuatro veces la secuencia test1 -> test2 -> y_x,) Tj ET
+BT /F1 9.3 Tf 45 332 Td (     activando yld = 1 con ysel = 0 para almacenar el resultado de ysubstractor \(y - x\). Como se aprecia en la) Tj ET
+BT /F1 9.3 Tf 45 319 Td (     forma de onda uut/y[7:0], el registro yreg decrece sucesivamente: 70 -> 55 -> 40 -> 25 -> 10, lo cual) Tj ET
+BT /F1 9.3 Tf 45 306 Td (     corresponde exactamente al residuo de 70 - \(15 * 4\) = 10 explicado en el caso de estudio.) Tj ET
+BT /F1 9.3 Tf 45 293 Td (   * Inversion de magnitud y convergencia \(t = 145 ns a 195 ns\): Cuando x = 15 y y = 10, se cumple x > y, por lo) Tj ET
+BT /F1 9.3 Tf 45 280 Td (     que ltflg pasa a 0. En test2 la FSM toma la rama hacia el estado x_y, activando xld = 1 y xsel = 0 para) Tj ET
+BT /F1 9.3 Tf 45 267 Td (     actualizar xreg <= 15 - 10 = 5. En el siguiente ciclo \(x = 5, y = 10\), vuelve a cumplirse x < y \(ltflg = 1\)) Tj ET
+BT /F1 9.3 Tf 45 254 Td (     y ejecuta una ultima vez el estado y_x para obtener yreg <= 10 - 5 = 5.) Tj ET
+BT /F1 9.3 Tf 45 241 Td (   * Condicion de termino y captura del resultado \(t = 205 ns a 225 ns\): Al igualarse x = 5 y y = 5, el bloque) Tj ET
+BT /F1 9.3 Tf 45 228 Td (     compare activa de inmediato eqflg = 1. Al evaluarse esta bandera en el estado test1, la FSM salta) Tj ET
+BT /F1 9.3 Tf 45 215 Td (     directamente al estado done, activando gld = 1 y almacenando el valor x = 5 en el registro greg, con lo que) Tj ET
+BT /F1 9.3 Tf 45 202 Td (     la salida gcd_out[7:0] muestra el valor final 5 \(0x05\).) Tj ET
+BT /F2 9.3 Tf 45 176 Td (3. Segundo Vector de Prueba GCD\(24, 18\) = 6 y Latencia del Procesador:) Tj ET
+BT /F1 9.3 Tf 45 163 Td (   En t = 300 ns se aplica un pulso de limpieza \(clr = 1\), reiniciando los registros a 0 y devolviendo la FSM al) Tj ET
+BT /F1 9.3 Tf 45 150 Td (   estado start. Al ingresar xin = 24 y yin = 18, el procesador ejecuta primero x <= 24 - 18 = 6 \(rama x_y\) y) Tj ET
+BT /F1 9.3 Tf 45 137 Td (   luego dos veces la rama y_x \(18 -> 12 -> 6\), convergiendo en x = y = 6 y entregando gcd_out = 6 \(0x06\).) Tj ET
+BT /F1 9.3 Tf 45 124 Td (   Se comprueba que cada operacion de resta toma exactamente 3 ciclos de reloj \(test1 -> test2 -> x_y / y_x\),) Tj ET
+BT /F1 9.3 Tf 45 111 Td (   demostrando un funcionamiento determinista, libre de glitches en la salida gracias al registro final greg.) Tj ET
+
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000267 00000 n 
+0000000413 00000 n 
+0000000510 00000 n 
+0000000612 00000 n 
+0000000717 00000 n 
+0000011858 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+20344
+%%EOF
